@@ -6,3 +6,5 @@ let calculations = [
         result: 2
     }
 ];
+
+module.exports = calculations;

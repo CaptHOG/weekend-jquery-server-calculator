@@ -10,9 +10,19 @@
 </head>
 <body>
     <h1>Server Side Calculator</h1>
-    <input type="number">
+    <input id="firstInput" type="number">
     <button>+</button>
-    <input type="number">
-    <button>=</button>
+    <input id="secondInput" type="number">
+    <button id="equalsButton">=</button>
+    <button id="clearInputsButton">C</button>
+    <ul id="calculationsList">
+        <li>
+            <span id="firstInputNumberSpan">2</span> 
+            <span id="operatorSpan">+</span> 
+            <span id="secondInputNumberSpan">2</span> 
+            <span id="equalsSpan">=</span> 
+            <span id="resultSpan">4</span>
+        </li>
+    </ul>
 </body>
 </html>
