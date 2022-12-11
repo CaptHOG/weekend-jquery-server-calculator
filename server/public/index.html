@@ -11,18 +11,18 @@
 <body>
     <h1>Server Side Calculator</h1>
     <input id="firstInput" type="number">
-    <button>+</button>
+    <button class="button">+</button>
+    <button class="button">-</button>
+    <button class="button">*</button>
+    <button class="button">/</button>
     <input id="secondInput" type="number">
     <button id="equalsButton">=</button>
     <button id="clearInputsButton">C</button>
-    <ul id="calculationsList">
-        <li>
-            <span id="firstInputNumberSpan">2</span> 
-            <span id="operatorSpan">+</span> 
-            <span id="secondInputNumberSpan">2</span> 
-            <span id="equalsSpan">=</span> 
-            <span id="resultSpan">4</span>
-        </li>
-    </ul>
+    <br>
+    <div>
+        <h2>Answer: <span id="answerValue"></span></h2>
+    </div>
+    <div id="recentEquation">
+    </div>
 </body>
 </html>

@@ -2,27 +2,62 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
 const PORT = 5000;
-
-let calculations = require('./modules/calculations.js');
-
-// This must be added before GET & POST routes.
 app.use(bodyParser.urlencoded({extended:true}))
-
-// Serve up static files (HTML, CSS, Client JS)
 app.use(express.static('server/public'));
 
+let calculations = [
+    {
+        numOne: 1,
+        numTwo: 1,
+        operator: '+',
+        result: 2
+    }
+];
+let inputValues = [];
 
-// GET route for /calculations
-// app.get('/calculations', (req, res) => {
-//     console.log('GET', calculations);
-//     res.send(calculations);
-// });
+
+
+// create a GET route with address /calculations
+app.get('/calculations', (req, res) => {
+    // send the calculations array to the client:
+    console.log('GET /calculations')
+    console.log(calculations);
+    res.send(calculations);
+  })
 
 // POST route
 app.post('/calculations', (req, res) => {
-    console.log('POST /calculations')
-    calculations.push(req.body);
-    res.sendStatus(201);
+    // this allows the data to be used server side
+    let numOne = req.body.numOne;
+    let numTwo = req.body.numTwo;
+    let operator = req.body.operator;
+
+    switch (operator) {
+        case "+": 
+        result = Number(numOne) + Number(numTwo);
+        break;
+        case "-": 
+        result = Number(numOne) - Number(numTwo);
+        break;
+        case "*": 
+        result = Number(numOne) * Number(numTwo);
+        break;
+        case "/": 
+        result = Number(numOne) / Number(numTwo);
+        break;
+    }
+
+    inputValues = 
+    {
+        numOne: numOne,
+        numTwo: numTwo,
+        operator: operator,
+        result: result
+    }
+
+    calculations.push(inputValues);
+
+    res.send(inputValues);
   })
 
 // starts server
