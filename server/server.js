@@ -11,7 +11,6 @@ let inputValues = [];
 
 // create a GET route with address /calculations
 app.get('/calculations', (req, res) => {
-    // send the calculations array to the client:
     console.log('GET /calculations')
     console.log(calculations);
     res.send(calculations);

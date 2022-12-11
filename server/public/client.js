@@ -7,13 +7,8 @@ function onReady() {
     $('#equalsButton').on('click', postCalculation);
     $('#clearInputsButton').on('click', clearInputs);
     $('.button').on('click', function(){
-        operator = $(this).html();
+      operator = $(this).html();
     })
-}
-
-function equalsButton() {
-    //postCalculation();
-    //fetchAndRenderCalculations();
 }
 
 function fetchAndRenderCalculations() {
