@@ -4,7 +4,7 @@ let operator = "";
 
 function onReady() {
     console.log('DOM is ready');
-    $('#equalsButton').on('click', equalsButton);
+    $('#equalsButton').on('click', postCalculation);
     $('#clearInputsButton').on('click', clearInputs);
     $('.button').on('click', function(){
         operator = $(this).html();
@@ -12,8 +12,8 @@ function onReady() {
 }
 
 function equalsButton() {
-    postCalculation();
-    fetchAndRenderCalculations();
+    //postCalculation();
+    //fetchAndRenderCalculations();
 }
 
 function fetchAndRenderCalculations() {
@@ -28,9 +28,9 @@ function fetchAndRenderCalculations() {
         $('#answerValue').empty();
         $('#answerValue').append(`${calculation.result}`);
         $('#recentEquation').append(`
-        <tr>
-            <td>${calculation.numOne} ${calculation.operator} ${calculation.numTwo} = ${calculation.result}</td>
-        </tr>
+        <li>
+        ${calculation.numOne} ${calculation.operator} ${calculation.numTwo} = ${calculation.result}
+        </li>
         `)
       }
     })
@@ -57,6 +57,8 @@ function postCalculation() {
     }).then((response) => {
       console.log('POST /calculations sent us this:', response)
     })
+    
+    fetchAndRenderCalculations();
 }
 
 function clearInputs() {

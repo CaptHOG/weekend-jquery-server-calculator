@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
     <script src="client.js"></script>
     <title>Server Side Calculator</title>
 </head>
 <body>
-    <h1>Server Side Calculator</h1>
-    <input id="firstInput" type="number">
-    <button class="button">+</button>
-    <button class="button">-</button>
-    <button class="button">*</button>
-    <button class="button">/</button>
-    <input id="secondInput" type="number">
-    <button id="equalsButton">=</button>
-    <button id="clearInputsButton">C</button>
-    <br>
-    <div>
+    <header>
+        <h1>Server Side Calculator</h1>
+    </header>
+    <main>
+        <input id="firstInput" type="number">
+        <button class="button">+</button>
+        <button class="button">-</button>
+        <button class="button">*</button>
+        <button class="button">/</button>
+        <input id="secondInput" type="number">
+        <button id="equalsButton">=</button>
+        <button id="clearInputsButton">C</button>
         <h2>Answer: <span id="answerValue"></span></h2>
-    </div>
-    <div id="recentEquation">
-    </div>
+        <ul id="recentEquation">
+        </ul>
+    </main>
 </body>
 </html>

@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    background-color: tan;
+}
+
+header {
+    background-color: coral;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+main {
+    text-align: center;
+}
+
+#answerValue {
+    font-size: larger;
+    color: blue;
+}
+
+#recentEquation {
+    list-style-type: none;
+    font-size: larger;
+}
