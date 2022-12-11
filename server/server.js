@@ -5,16 +5,8 @@ const PORT = 5000;
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static('server/public'));
 
-let calculations = [
-    {
-        numOne: 1,
-        numTwo: 1,
-        operator: '+',
-        result: 2
-    }
-];
+let calculations = [];
 let inputValues = [];
-
 
 
 // create a GET route with address /calculations
@@ -27,7 +19,7 @@ app.get('/calculations', (req, res) => {
 
 // POST route
 app.post('/calculations', (req, res) => {
-    // this allows the data to be used server side
+    // allows the data to be used server side
     let numOne = req.body.numOne;
     let numTwo = req.body.numTwo;
     let operator = req.body.operator;
@@ -54,9 +46,8 @@ app.post('/calculations', (req, res) => {
         operator: operator,
         result: result
     }
-
+    
     calculations.push(inputValues);
-
     res.send(inputValues);
   })
 

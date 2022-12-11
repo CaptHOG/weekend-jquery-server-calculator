@@ -17,7 +17,7 @@ function equalsButton() {
 }
 
 function fetchAndRenderCalculations() {
-    // GET calculations from server
+    // GET/read calculations from server
     $.ajax({
       url: '/calculations',
       method: 'GET'
@@ -41,17 +41,13 @@ function postCalculation() {
     let firstInputValue = $('#firstInput').val();
     let secondInputValue = $('#secondInput').val();
   
-    // // make the object that we want to send to our server
+    // create the object that we want to send to our server
     let inputValues =
         {
             numOne: firstInputValue,
             numTwo: secondInputValue,
             operator: operator
         };
-    console.log(inputValues);
-  
-    $('#firstInput').val('');
-    $('#secondInput').val('');
 
     // POST object to server
     $.ajax({
@@ -61,8 +57,6 @@ function postCalculation() {
     }).then((response) => {
       console.log('POST /calculations sent us this:', response)
     })
-
-    //fetchAndRenderCalculations();
 }
 
 function clearInputs() {
